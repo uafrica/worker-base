@@ -6,7 +6,8 @@ MAINTAINER Johan Meiring <johan@uafrica.com>
 RUN apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common \
   && add-apt-repository ppa:ondrej/php
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
+RUN apt-get update \
+  && DEBIAN_FRONTEND=noninteractive apt-get install -y --allow-unauthenticated \
     php7.1-cli \
     php7.1-mysql \
     php7.1-intl \
