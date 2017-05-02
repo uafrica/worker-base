@@ -5,7 +5,7 @@ MAINTAINER Johan Meiring <johan@uafrica.com>
 # Install PHP from PPA
 RUN apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common \
-  && add-apt-repository ppa:ondrej/php
+  && LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php
 RUN apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y --allow-unauthenticated \
     php7.0-cli \
@@ -21,6 +21,7 @@ RUN apt-get update \
     php7.0-xmlreader \
     php7.0-xmlwriter \
     php-memcached \
+    php-redis \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
