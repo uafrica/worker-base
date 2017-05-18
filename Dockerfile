@@ -20,14 +20,10 @@ RUN apt-get update \
     php7.0-soap \
     php7.0-xmlreader \
     php7.0-xmlwriter \
+    php-memcached \
     php-redis \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-# Copy the Amazon elasticache cluster client, and configure.
-COPY amazon-elasticache-cluster-client.so /usr/lib/php/20151012/amazon-elasticache-cluster-client.so
-RUN echo "extension=amazon-elasticache-cluster-client.so\nmemcached.sess_consistent_hash = On" >> /etc/php/7.0/mods-available/memcached.ini
-RUN phpenmod memcached
 
 # Install wktmltopdf and its dependencies
 COPY wkhtmltox-0.12.2.1_linux-trusty-amd64.deb /wkhtmltox-0.12.2.1_linux-trusty-amd64.deb
