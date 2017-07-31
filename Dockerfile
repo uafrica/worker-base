@@ -18,7 +18,6 @@ RUN apt-get update \
     php7.0-soap \
     php7.0-xmlreader \
     php7.0-xmlwriter \
-    php-memcached \
     php-redis \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
