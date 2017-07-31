@@ -1,7 +1,5 @@
 FROM ubuntu:16.04
 
-MAINTAINER Johan Meiring <johan@uafrica.com>
-
 # Install PHP from PPA
 RUN apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common \
