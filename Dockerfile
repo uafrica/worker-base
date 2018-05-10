@@ -6,19 +6,19 @@ RUN apt-get update \
   && LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php
 RUN apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y --allow-unauthenticated \
-    php7.0-cli \
-    php7.0-mysql \
-    php7.0-intl \
-    php7.0-mbstring \
-    php7.0-bcmath \
-    php7.0-curl \
-    php7.0-simplexml \
-    php7.0-zip \
-    php7.0-json \
-    php7.0-soap \
-    php7.0-xmlreader \
-    php7.0-xmlwriter \
-    php-redis \
+  php7.0-cli \
+  php7.0-mysql \
+  php7.0-intl \
+  php7.0-mbstring \
+  php7.0-bcmath \
+  php7.0-curl \
+  php7.0-simplexml \
+  php7.0-zip \
+  php7.0-json \
+  php7.0-soap \
+  php7.0-xmlreader \
+  php7.0-xmlwriter \
+  php-redis \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
