@@ -23,10 +23,10 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install wktmltopdf and its dependencies
-COPY wkhtmltox-0.12.2.1_linux-trusty-amd64.deb /wkhtmltox-0.12.2.1_linux-trusty-amd64.deb
+COPY wkhtmltox_0.12.5-1.xenial_amd64.deb /wkhtmltox_0.12.5-1.xenial_amd64.deb
 
 RUN apt-get update \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y fontconfig libfontconfig1 libjpeg-turbo8 libx11-6 libxext6 libxrender1 xfonts-base xfonts-75dpi \
-  && dpkg -i /wkhtmltox-0.12.2.1_linux-trusty-amd64.deb \
+  && dpkg -i /wkhtmltox_0.12.5-1.xenial_amd64.deb \
   && apt-get clean \
-  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /wkhtmltox-0.12.2.1_linux-trusty-amd64.deb
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /wkhtmltox_0.12.5-1.xenial_amd64.deb
